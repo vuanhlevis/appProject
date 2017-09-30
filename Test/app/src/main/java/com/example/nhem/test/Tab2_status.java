@@ -3,9 +3,12 @@ package com.example.nhem.test;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
+
+import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.transition.Slide;
 import android.util.Log;
+import android.util.Pair;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -172,11 +175,17 @@ public class Tab2_status extends AppCompatActivity implements View.OnClickListen
                 break;
 
             case R.id.ib_ok:
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this);
+                Pair[] pair = new Pair[1];
+
+                pair[0] = new Pair<View, String> (iv_feel, "fell_tab2App");
+
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, pair);
                 Intent i = new Intent(Tab2_status.this, MainActivity.class);
 
                 i.putExtra(Constants.KEY_ANIM_TYPE, Constants.TransitionType.SlideJava);
                 i.putExtra(Constants.KEY_TITLE, "Slide By XML");
+
+                i.putExtra("name", tmp);
 
                 startActivity(i, options.toBundle());
                 break;

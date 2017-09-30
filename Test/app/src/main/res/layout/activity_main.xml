@@ -18,6 +18,7 @@
             android:layout_width="110dp"
             android:layout_height="110dp"
             android:layout_margin="20dp"
+            android:transitionName="fell_tab2App"
             android:src="@drawable/angry" />
 
         <TextView

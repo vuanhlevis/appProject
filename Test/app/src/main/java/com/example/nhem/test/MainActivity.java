@@ -10,6 +10,7 @@ import android.transition.TransitionInflater;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.animation.AnticipateOvershootInterpolator;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.nhem.test.database.AnswerModel;
@@ -20,24 +21,62 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     Random rd = new Random();
     Constants.TransitionType type;
+    Bundle bundle;
+    String tmp;
+    ImageView iv_feel;
+
     int x;
     TextView tvDescription;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
+        super.onCreate(savedInstanceState);
+
+        iv_feel = (ImageView) findViewById(R.id.iv_feel);
+
+        bundle = getIntent().getExtras();
+        tmp = bundle.getString("name");
+
+        switch (tmp) {
+            case "icon_bad":
+                iv_feel.setImageResource(R.drawable.sad);
+
+                break;
+            case "icon_rad":
+                iv_feel.setImageResource(R.drawable.happy);
+                break;
+
+            case "icon_meh":
+                iv_feel.setImageResource(R.drawable.mood_meh_select);
+                break;
+
+            case "icon_good":
+                iv_feel.setImageResource(R.drawable.cool);
+                break;
+
+            case "icon_awful":
+                iv_feel.setImageResource(R.drawable.dead);
+                break;
+
+        }
+
+        initLayout();
+
+        initAnimation();
+    }
+
+    private void initLayout() {
         x = rd.nextInt(5);
         AnswerModel answerModelMusic = DatabaseHandle.getInstance(this).getListAnswerMusic().get(x);
         AnswerModel answerModelQuote = DatabaseHandle.getInstance(this).getListAnswerQuote().get(x);
-        super.onCreate(savedInstanceState);
+
         TextView tvMusic = (TextView) findViewById(R.id.tv_namemusic);
         TextView tvQuote = (TextView) findViewById(R.id.tv_quote);
         tvMusic.setText(answerModelMusic.getContent());
         tvQuote.setText(answerModelQuote.getContent());
 
         type = (Constants.TransitionType) getIntent().getSerializableExtra(Constants.KEY_ANIM_TYPE);
-        Log.d("ccccc", "onCreate: " + type);
 
-        initAnimation();
     }
 
     private void initAnimation() {
