@@ -9,6 +9,7 @@ import android.transition.Transition;
 import android.transition.TransitionInflater;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.View;
 import android.view.animation.AnticipateOvershootInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,12 +19,13 @@ import com.example.nhem.test.database.DatabaseHandle;
 
 import java.util.Random;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Random rd = new Random();
     Constants.TransitionType type;
     Bundle bundle;
     String tmp;
     ImageView iv_feel;
+    ImageView iv_back;
 
     int x;
     TextView tvDescription;
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         iv_feel = (ImageView) findViewById(R.id.iv_feel);
+        iv_back = (ImageView) findViewById(R.id.iv_back);
+        iv_back.setOnClickListener(this);
 
         bundle = getIntent().getExtras();
         tmp = bundle.getString("name");
@@ -127,4 +131,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.iv_back:
+                finishAfterTransition();
+        }
+    }
 }
