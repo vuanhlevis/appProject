@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="#e1bee7"/>
+
+        <ImageView
+            android:id="@+id/iv_feel"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/angry" />
+
+        <TextView
+            android:id="@+id/tv_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginEnd="20dp"
+            android:textStyle="italic"
+            android:text="Tại sao con khóc ?"
+            android:textSize="21sp" />
+
+        <ImageView
+            android:id="@+id/iv_fields"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/love"
+            android:layout_below="@+id/tv_question"/>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_quote"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:elevation="10dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_quote"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/quote"/>
+
+                <TextView
+                    android:id="@+id/tv_ttquote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginTop="15dp"
+                    android:textColor="#aa00ff"
+                    android:textSize="20sp"
+                    android:text="Quote !!!"/>
+
+                <EditText
+                    android:id="@+id/tv_quote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_ttquote"
+                    android:layout_marginStart="65dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:textStyle="italic"
+                    android:editable="false"
+                    android:text="Khóc con c** ! Vui lên nào =))))"
+                    android:textSize="16sp"/>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorView"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@+id/iv_quote"/>
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_below="@+id/cv_quote"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:elevation="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_music"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/music" />
+
+                <TextView
+                    android:id="@+id/tv_ttmusic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Let's Play"
+                    android:textColor="#aa00ff"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_namemusic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_ttmusic"
+                    android:layout_marginStart="65dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="Music's name..."
+                    android:autoLink="web"
+                    android:textSize="18sp" />
+
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_music"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="30dp"
+                    android:background="@color/colorView" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/back" />
+    </RelativeLayout>
+
+</LinearLayout>
