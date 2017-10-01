@@ -72,18 +72,19 @@
                     android:textSize="20sp"
                     android:text="Quote !!!"/>
 
-                <EditText
+                <TextView
                     android:id="@+id/tv_quote"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tv_ttquote"
-                    android:layout_marginStart="65dp"
                     android:layout_marginBottom="10dp"
                     android:layout_marginEnd="20dp"
-                    android:textStyle="italic"
+                    android:layout_marginStart="65dp"
                     android:editable="false"
-                    android:text="Khóc con c** ! Vui lên nào =))))"
-                    android:textSize="16sp"/>
+                    android:nestedScrollingEnabled="true"
+                    android:text="Khóc con c** ! Vui lên nào =)))) "
+                    android:textSize="16sp"
+                    android:textStyle="italic" />
 
                 <View
                     android:layout_width="2dp"

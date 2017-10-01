@@ -88,16 +88,16 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:gravity="center_horizontal"
+        android:padding="25dp"
         android:text="WHAT HAVE YOU
 BEEN UP TO?"
         android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline20"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -261,9 +261,6 @@ BEEN UP TO?"
     <TableRow
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintLeft_toLeftOf="@+id/guideline7"
         app:layout_constraintRight_toLeftOf="@+id/guideline13"
@@ -274,21 +271,24 @@ BEEN UP TO?"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="hihi"
+            android:padding="5dp"
+            android:text="passion"
             android:textAlignment="center" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="hehe"
+            android:padding="5dp"
+            android:text="friends"
             android:textAlignment="center" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="hoho"
+            android:padding="5dp"
+            android:text="love"
             android:textAlignment="center" />
     </TableRow>
 
@@ -296,9 +296,6 @@ BEEN UP TO?"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="0dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintLeft_toLeftOf="@+id/guideline15"
         app:layout_constraintRight_toLeftOf="@+id/guideline21"
@@ -308,14 +305,14 @@ BEEN UP TO?"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="hehe"
+            android:text="family"
             android:textAlignment="center" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="hoho"
+            android:text="work"
             android:textAlignment="center"></TextView>
 
     </TableRow>

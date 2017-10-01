@@ -123,6 +123,20 @@ public class Tab2_status extends AppCompatActivity implements View.OnClickListen
                 icon_love.status = !icon_love.status;
                 if (icon_love.status) {
                     icon_love.imageView.setImageResource(R.drawable.love_pressed);
+
+                    icon_friend.status = false;
+                    icon_work.status = false;
+                    icon_passion.status = false;
+                    icon_family.status = false;
+
+
+                    icon_passion.imageView.setImageResource(R.drawable.passion);
+                    icon_family.imageView.setImageResource(R.drawable.home);
+                    icon_work.imageView.setImageResource(R.drawable.briefcase);
+                    icon_friend.imageView.setImageResource(R.drawable.friend);
+
+
+
                 } else {
                     icon_love.imageView.setImageResource(R.drawable.love2);
                 }
@@ -133,6 +147,19 @@ public class Tab2_status extends AppCompatActivity implements View.OnClickListen
                 icon_friend.status = !icon_friend.status;
                 if (icon_friend.status) {
                     icon_friend.imageView.setImageResource(R.drawable.friends_pressed);
+
+                    icon_love.status = false;
+                    icon_work.status = false;
+                    icon_passion.status = false;
+                    icon_family.status = false;
+
+                    icon_passion.imageView.setImageResource(R.drawable.passion);
+                    icon_family.imageView.setImageResource(R.drawable.home);
+                    icon_work.imageView.setImageResource(R.drawable.briefcase);
+                    icon_love.imageView.setImageResource(R.drawable.love2);
+
+
+
                 } else {
                     icon_friend.imageView.setImageResource(R.drawable.friend);
                 }
@@ -144,6 +171,18 @@ public class Tab2_status extends AppCompatActivity implements View.OnClickListen
 
                 if (icon_family.status) {
                     icon_family.imageView.setImageResource(R.drawable.home_pressed);
+
+                    icon_friend.status = false;
+                    icon_work.status = false;
+                    icon_passion.status = false;
+                    icon_love.status = false;
+
+                    icon_passion.imageView.setImageResource(R.drawable.passion);
+
+                    icon_work.imageView.setImageResource(R.drawable.briefcase);
+                    icon_friend.imageView.setImageResource(R.drawable.friend);
+                    icon_love.imageView.setImageResource(R.drawable.love2);
+
                 } else {
                     icon_family.imageView.setImageResource(R.drawable.home);
                 }
@@ -154,6 +193,19 @@ public class Tab2_status extends AppCompatActivity implements View.OnClickListen
 
                 if (icon_passion.status) {
                     icon_passion.imageView.setImageResource(R.drawable.passion_pressed);
+
+                    icon_friend.status = false;
+                    icon_work.status = false;
+                    icon_love.status = false;
+                    icon_family.status = false;
+
+
+
+                    icon_family.imageView.setImageResource(R.drawable.home);
+                    icon_work.imageView.setImageResource(R.drawable.briefcase);
+                    icon_friend.imageView.setImageResource(R.drawable.friend);
+                    icon_love.imageView.setImageResource(R.drawable.love2);
+
                 } else {
                     icon_passion.imageView.setImageResource(R.drawable.passion);
                 }
@@ -164,6 +216,17 @@ public class Tab2_status extends AppCompatActivity implements View.OnClickListen
                 icon_work.status = !icon_work.status;
                 if (icon_work.status) {
                     icon_work.imageView.setImageResource(R.drawable.briefcase_pressed);
+
+                    icon_friend.status = false;
+                    icon_love.status = false;
+                    icon_passion.status = false;
+                    icon_family.status = false;
+
+                    icon_passion.imageView.setImageResource(R.drawable.passion);
+                    icon_family.imageView.setImageResource(R.drawable.home);
+                    icon_friend.imageView.setImageResource(R.drawable.friend);
+                    icon_love.imageView.setImageResource(R.drawable.love2);
+
                 } else {
                     icon_work.imageView.setImageResource(R.drawable.briefcase);
                 }
