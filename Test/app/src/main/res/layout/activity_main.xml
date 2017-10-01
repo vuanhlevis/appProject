@@ -9,9 +9,10 @@
         android:layout_height="match_parent">
 
         <View
+            android:id="@+id/backgroud_main"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:background="#e1bee7"/>
+            android:background="#e1bee7" />
 
         <ImageView
             android:id="@+id/iv_feel"

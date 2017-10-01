@@ -1,5 +1,6 @@
 package com.example.nhem.test;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.transition.Explode;
@@ -27,8 +28,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ImageView iv_feel;
     ImageView iv_back;
 
+    View background;
+
     int x;
-    TextView tvDescription;
+    TextView tvquestion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
@@ -36,7 +39,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         iv_feel = (ImageView) findViewById(R.id.iv_feel);
         iv_back = (ImageView) findViewById(R.id.iv_back);
+        tvquestion = (TextView) findViewById(R.id.tv_question);
         iv_back.setOnClickListener(this);
+
+        background = findViewById(R.id.backgroud_main);
 
         bundle = getIntent().getExtras();
         tmp = bundle.getString("name");
@@ -44,22 +50,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (tmp) {
             case "icon_bad":
                 iv_feel.setImageResource(R.drawable.sad);
+                background.setBackgroundColor(Color.parseColor("#c5cae9"));
 
                 break;
             case "icon_rad":
                 iv_feel.setImageResource(R.drawable.happy);
+                background.setBackgroundColor(Color.parseColor("#ffe0b2"));
+                tvquestion.setText("Vui cc :V");
                 break;
 
             case "icon_meh":
                 iv_feel.setImageResource(R.drawable.mood_meh_select);
+                background.setBackgroundColor(Color.parseColor("#e1bee7"));
+                tvquestion.setText("nhìn cc");
+
                 break;
 
             case "icon_good":
                 iv_feel.setImageResource(R.drawable.cool);
+                background.setBackgroundColor(Color.parseColor("#c8e6c9"));
+
+                tvquestion.setText("fuck you");
                 break;
 
             case "icon_awful":
                 iv_feel.setImageResource(R.drawable.dead);
+                background.setBackgroundColor(Color.parseColor("#cfd8dc"));
+
+                tvquestion.setText("Hãy vui lên vì cuộc đời cho phép");
                 break;
 
         }

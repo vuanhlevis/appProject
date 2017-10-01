@@ -35,9 +35,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Rad"
+            android:text="rad"
             android:textAlignment="center"
-            android:textColor="@android:color/holo_orange_light"
+            android:textColor="@color/colorRad"
             android:textSize="16sp" />
 
         <TextView
@@ -47,7 +47,7 @@
             android:layout_weight="1"
             android:text="good"
             android:textAlignment="center"
-            android:textColor="@android:color/holo_green_light"
+            android:textColor="@color/colorGood"
             android:textSize="16sp" />
 
         <TextView
@@ -57,7 +57,7 @@
             android:layout_weight="1"
             android:text="meh"
             android:textAlignment="center"
-            android:textColor="#a71aed"
+            android:textColor="@color/coloMeh"
             android:textSize="16sp" />
 
         <TextView
@@ -67,7 +67,7 @@
             android:layout_weight="1"
             android:text="bad"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/colorBad"
             android:textSize="16sp" />
 
         <TextView
@@ -77,7 +77,7 @@
             android:layout_weight="1"
             android:text="awful"
             android:textAlignment="center"
-            android:textColor="@color/colorDivider"
+            android:textColor="@color/colorAwfull"
             android:textSize="16sp" />
 
     </TableRow>

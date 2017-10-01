@@ -187,6 +187,7 @@ public class Tab2_status extends AppCompatActivity implements View.OnClickListen
 
                 i.putExtra("name", tmp);
 
+
                 startActivity(i, options.toBundle());
                 break;
 
