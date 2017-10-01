@@ -3,16 +3,11 @@ package com.example.nhem.test;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
-
-import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
-import android.transition.Slide;
 import android.util.Log;
 import android.util.Pair;
-import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
-import android.view.animation.AnticipateOvershootInterpolator;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
@@ -27,6 +22,7 @@ public class Tab2_status extends AppCompatActivity implements View.OnClickListen
     Icon_status icon_work;
     Icon_status icon_passion;
     Icon_status icon_friend;
+    public static String KIND = "'*'";
 
 
     ImageView iv_feel;
@@ -120,6 +116,9 @@ public class Tab2_status extends AppCompatActivity implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.iv_love:
+                if (StartApp.isHappy) KIND = "'love'";
+                else
+                    KIND = "'sadlove'";
                 icon_love.status = !icon_love.status;
                 if (icon_love.status) {
                     icon_love.imageView.setImageResource(R.drawable.love_pressed);
@@ -144,6 +143,7 @@ public class Tab2_status extends AppCompatActivity implements View.OnClickListen
                 break;
 
             case R.id.iv_friends:
+                KIND = "'friendship'";
                 icon_friend.status = !icon_friend.status;
                 if (icon_friend.status) {
                     icon_friend.imageView.setImageResource(R.drawable.friends_pressed);
@@ -167,6 +167,7 @@ public class Tab2_status extends AppCompatActivity implements View.OnClickListen
                 break;
 
             case R.id.iv_home:
+                KIND = "'family'";
                 icon_family.status = !icon_family.status;
 
                 if (icon_family.status) {
@@ -189,6 +190,7 @@ public class Tab2_status extends AppCompatActivity implements View.OnClickListen
                 break;
 
             case R.id.iv_passion:
+                KIND = "'passion'";
                 icon_passion.status = !icon_passion.status;
 
                 if (icon_passion.status) {
@@ -213,6 +215,9 @@ public class Tab2_status extends AppCompatActivity implements View.OnClickListen
                 break;
 
             case R.id.iv_work:
+                if (StartApp.isHappy) KIND = "'job'";
+                else
+                    KIND = "'sadjob'";
                 icon_work.status = !icon_work.status;
                 if (icon_work.status) {
                     icon_work.imageView.setImageResource(R.drawable.briefcase_pressed);

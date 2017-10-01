@@ -17,6 +17,7 @@ public class StartApp extends AppCompatActivity implements View.OnClickListener 
     ImageView icon_meh;
     ImageView icon_good;
     ImageView icon_rad;
+    public static Boolean isHappy = true ;
 
     Animation animation;
 
@@ -37,24 +38,24 @@ public class StartApp extends AppCompatActivity implements View.OnClickListener 
 
         icon_good = (ImageView) findViewById(R.id.iv_good);
         icon_good.setOnClickListener(this);
-        animation.setDuration(3000);
+        animation.setDuration(200);
         icon_good.setAnimation(animation);
 
         icon_meh = (ImageView) findViewById(R.id.iv_meh);
         icon_meh.setOnClickListener(this);
-        animation.setDuration(4000);
+        animation.setDuration(200);
         icon_meh.setAnimation(animation);
 
 
         icon_bad = (ImageView) findViewById(R.id.iv_bad);
         icon_bad.setOnClickListener(this);
-        animation.setDuration(5000);
+        animation.setDuration(200);
         icon_bad.setAnimation(animation);
 
 
         icon_awful = (ImageView) findViewById(R.id.iv_awful);
         icon_awful.setOnClickListener(this);
-        animation.setDuration(6000);
+        animation.setDuration(200);
         icon_awful.setAnimation(animation);
 
     }
@@ -88,25 +89,25 @@ public class StartApp extends AppCompatActivity implements View.OnClickListener 
         switch (v.getId()) {
             case R.id.iv_bad:
                 shareElementTransition(icon_bad);
+                isHappy = false;
                 break;
+
 
             case R.id.iv_awful:
                 shareElementTransition(icon_awful);
+                isHappy = false;
                 break;
 
             case R.id.iv_good:
                 shareElementTransition(icon_good);
-
                 break;
 
             case R.id.iv_rad:
                 shareElementTransition(icon_rad);
-
                 break;
 
             case R.id.iv_meh:
                 shareElementTransition(icon_meh);
-
                 break;
 
         }

@@ -3,62 +3,59 @@ package com.example.nhem.test.database;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.nhem.test.Tab2_status.KIND;
 
 /**
  * Created by ctrls on 26/09/2017.
  */
 
 public class DatabaseHandle {
-    private static final String TAG = "DatabaseHandle";
+    private static final String EMOTION = "love";
     private MyDatabase myDatabase;
 
-    public DatabaseHandle(Context context){
+    public DatabaseHandle(Context context) {
         myDatabase = new MyDatabase(context);
     }
+
     private static DatabaseHandle databaseHandle;
-    public static DatabaseHandle getInstance(Context context){
-        if (databaseHandle == null){
+
+    public static DatabaseHandle getInstance(Context context) {
+        if (databaseHandle == null) {
             databaseHandle = new DatabaseHandle(context);
         }
         return databaseHandle;
     }
+
     private SQLiteDatabase sqLiteDatabase;
-    public List<AnswerModel> getListAnswerMusic(){
-        List<AnswerModel> answerModelList = new ArrayList<>();
-        sqLiteDatabase = myDatabase.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM db_music", null);
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()){
-            int id = cursor.getInt(0);
-            String kind = cursor.getString(1);
-            String content = cursor.getString(2);
 
-            AnswerModel answerModel = new AnswerModel(id, kind, content);
-            answerModelList.add(answerModel );
-            cursor.moveToNext();
-        }
-        Log.d(TAG, "getListAnswer: " + answerModelList.toString());
-        return answerModelList;
+
+    public String getMusicAnswer() {
+        sqLiteDatabase = myDatabase.getReadableDatabase();
+        Cursor cursorMusic;
+        if (KIND == "'*'")
+        cursorMusic = sqLiteDatabase.rawQuery("SELECT content FROM db_music ORDER BY RANDOM() LIMIT 1", null);
+        else
+        cursorMusic = sqLiteDatabase.rawQuery("SELECT content FROM db_music WHERE kind == " + KIND +" ORDER BY RANDOM() LIMIT 1", null);
+        cursorMusic.moveToFirst();
+        return cursorMusic.getString(0);
     }
-    public List<AnswerModel> getListAnswerQuote(){
-        List<AnswerModel> answerModelList = new ArrayList<>();
-        sqLiteDatabase = myDatabase.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM db_quote", null);
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()){
-            int id = cursor.getInt(0);
-            String kind = cursor.getString(1);
-            String content = cursor.getString(2);
 
-            AnswerModel answerModel = new AnswerModel(id, kind, content);
-            answerModelList.add(answerModel );
-            cursor.moveToNext();
+    public String getQuoteAnswer() {
+        sqLiteDatabase = myDatabase.getReadableDatabase();
+        Cursor cursorQuote;
+        if (KIND == "'*'")
+            cursorQuote = sqLiteDatabase.rawQuery("SELECT content FROM db_quote ORDER BY RANDOM() LIMIT 1", null);
+        else {
+            if (KIND == "'sadlove'") KIND = "'love'";
+            if (KIND == "'sadjob'") KIND = "'job'";
+            cursorQuote = sqLiteDatabase.rawQuery("SELECT content FROM db_quote WHERE kind == " + KIND + " ORDER BY RANDOM() LIMIT 1", null);
         }
-        Log.d(TAG, "getListAnswer: " + answerModelList.toString());
-        return answerModelList;
+        cursorQuote.moveToFirst();
+        return cursorQuote.getString(0);
     }
 }
+

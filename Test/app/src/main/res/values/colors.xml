@@ -9,8 +9,8 @@
     <color name="colorIcons">#FFFFFF</color>
     <color name="colorDivider">#80909c</color>
     
-    <color name="colorRad">#FFDA44</color>
-    <color name="colorGood">#91DC5A</color>
+    <color name="colorRad">#E36600</color>
+    <color name="colorGood">#199400</color>
     <color name="coloMeh">#933EC5</color>
     <color name="colorBad">#006DF0</color>
     <color name="colorAwfull">#6B6B6B</color>
